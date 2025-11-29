@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة أعلام الدول - C++ Graphics</title>
-    
-    <link rel="icon" href="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg" type="image/jpeg">
+
+    <link rel="icon"
+        href="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg"
+        type="image/jpeg">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        ** {
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        a,
+        button,
+        input {
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: none;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #332f2f; /* لون الخلفية من اللوكو */
+            background: #332f2f;
+            /* لون الخلفية من اللوكو */
             min-height: 100vh;
-            color: #e0e0e0; /* لون النص فاتح */
+            color: #e0e0e0;
+            /* لون النص فاتح */
         }
 
         .container {
@@ -30,10 +47,11 @@
         /* Header Styles */
         header {
             background: #262222;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
             padding: 30px 0;
-            border-bottom: 2px solid #f7474d; /* خط أحمر من اللوكو */
+            border-bottom: 2px solid #f7474d;
+            /* خط أحمر من اللوكو */
         }
 
         .header-content {
@@ -46,7 +64,8 @@
         .header-logo {
             width: 80px;
             height: 80px;
-            border-radius: 50%; /* جعل الصورة دائرية */
+            border-radius: 50%;
+            /* جعل الصورة دائرية */
             border: 3px solid #f7474d;
             box-shadow: 0 0 15px rgba(247, 71, 77, 0.3);
         }
@@ -115,7 +134,7 @@
             border-radius: 15px;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             border: 1px solid #4d4646;
         }
 
@@ -140,15 +159,16 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             border: 1px solid transparent;
-            text-decoration: none; /* لإزالة الخط من الرابط */
+            text-decoration: none;
+            /* لإزالة الخط من الرابط */
             display: block;
         }
 
         .flag-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             border-color: #f7474d;
         }
 
@@ -158,7 +178,7 @@
             object-fit: contain;
             margin-bottom: 15px;
             border-radius: 10px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 5px;
         }
 
@@ -176,9 +196,23 @@
             margin-top: 8px;
         }
 
-        .badge.سهل { background: rgba(40, 167, 69, 0.2); color: #75b798; border: 1px solid #28a745; }
-        .badge.متوسط { background: rgba(255, 193, 7, 0.2); color: #ffda6a; border: 1px solid #ffc107; }
-        .badge.متقدم { background: rgba(220, 53, 69, 0.2); color: #ea868f; border: 1px solid #dc3545; }
+        .badge.سهل {
+            background: rgba(40, 167, 69, 0.2);
+            color: #75b798;
+            border: 1px solid #28a745;
+        }
+
+        .badge.متوسط {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffda6a;
+            border: 1px solid #ffc107;
+        }
+
+        .badge.متقدم {
+            background: rgba(220, 53, 69, 0.2);
+            color: #ea868f;
+            border: 1px solid #dc3545;
+        }
 
         /* Footer Styles */
         footer {
@@ -220,24 +254,46 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             .header-text {
                 text-align: center;
             }
-            header h1 { font-size: 1.8rem; }
-            .controls { flex-direction: column; }
-            #search, select { width: 100%; }
-            .flags-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-            .footer-content { flex-direction: column; gap: 10px;}
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            #search,
+            select {
+                width: 100%;
+            }
+
+            .flags-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container header-content">
-            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg" alt="CodeLab Logo" class="header-logo">
-            
+            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg"
+                alt="CodeLab Logo" class="header-logo">
+
             <div class="header-text">
-                <h1> مكتبة أعلام الدول - <a href="https://t.me/CodeLabIQ" style="color: #dc3545 !important; text-decoration: none;">CodeLab</a> </h1>
+                <h1> مكتبة أعلام الدول - <a href="https://t.me/CodeLabIQ"
+                        style="color: #dc3545 !important; text-decoration: none;">CodeLab</a> </h1>
                 <p>مجموعة كاملة من أكواد رسم الأعلام باستخدام C++ Graphics</p>
             </div>
         </div>
@@ -246,7 +302,7 @@
     <main class="container">
         <div class="controls">
             <input type="text" id="search" placeholder="🔍 ابحث عن دولة..." />
-            
+
             <select id="filter">
                 <option value="all">جميع القارات</option>
                 <option value="الشرق الأوسط">الشرق الأوسط</option>
@@ -254,7 +310,7 @@
                 <option value="أوروبا">أوروبا</option>
                 <option value="أفريقيا">أفريقيا</option>
             </select>
-            
+
             <select id="difficulty">
                 <option value="all">جميع المستويات</option>
                 <option value="سهل">سهل</option>
@@ -268,17 +324,19 @@
         </div>
 
         <div id="flags-grid" class="flags-grid">
-            </div>
+        </div>
     </main>
 
     <footer>
         <div class="container footer-content">
-            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg" alt="CodeLab Logo" class="footer-logo">
-            
+            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg"
+                alt="CodeLab Logo" class="footer-logo">
+
             <p>للمزيد من المشاريع البرمجية <a href="https://t.me/CodeLabIQ" target="_blank">قناة CodeLab</a></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
