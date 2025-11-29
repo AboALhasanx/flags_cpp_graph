@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">علم - مكتبة أعلام الدول</title>
+
+    <link rel="icon"
+        href="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg"
+        type="image/jpeg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #332f2f;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: #262222;
+            padding: 20px 0;
+            border-bottom: 2px solid #f7474d;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #f7474d;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #f7474d;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        main {
+            flex: 1;
+            /* يدفع الفوتر للأسفل */
+        }
+
+        .flag-page {
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #f7474d;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover {
+            text-decoration: none;
+            transform: translateX(5px);
+        }
+
+        .flag-card {
+            background: #403b3b;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            border: 1px solid #4d4646;
+            text-align: center;
+        }
+
+        .flag-title {
+            font-size: 2.5rem;
+            color: #f7474d;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .flag-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border: 1px solid #555;
+        }
+
+        .flag-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .badge.سهل {
+            background: rgba(40, 167, 69, 0.2);
+            color: #75b798;
+            border: 1px solid #28a745;
+        }
+
+        .badge.متوسط {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffda6a;
+            border: 1px solid #ffc107;
+        }
+
+        .badge.متقدم {
+            background: rgba(220, 53, 69, 0.2);
+            color: #ea868f;
+            border: 1px solid #dc3545;
+        }
+
+        .category-badge {
+            background: rgba(102, 126, 234, 0.2) !important;
+            color: #ffffff !important;
+            border: 1px solid #ffffff !important;
+        }
+
+        .code-box {
+            background: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border: 1px solid #444;
+        }
+
+        .code-header {
+            background: #252526;
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .code-title {
+            font-weight: 600;
+            color: #d4d4d4;
+            font-size: 1rem;
+            font-family: 'Source Code Pro', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn {
+            background: #f7474d;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-btn:hover {
+            background: #d63a40;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 71, 77, 0.3);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .copy-btn.copied {
+            background: #28a745;
+        }
+
+        .code-wrapper {
+            display: flex;
+            background: #1e1e1e;
+            overflow-x: auto;
+        }
+
+        .line-numbers {
+            background: #1e1e1e;
+            color: #606060;
+            padding: 20px 10px;
+            text-align: right;
+            user-select: none;
+            border-right: 1px solid #333;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            min-width: 45px;
+        }
+
+        .line-numbers span {
+            display: block;
+        }
+
+        pre {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 0;
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+            direction: ltr;
+            text-align: left;
+            overflow-x: visible;
+            color: #d4d4d4;
+        }
+
+        code {
+            font-family: 'Source Code Pro', monospace;
+            padding: 20px;
+        }
+
+        .success-msg {
+            text-align: center;
+            color: #4cd137;
+            font-weight: bold;
+            padding: 10px;
+            background: rgba(76, 209, 55, 0.1);
+            border-top: 1px solid #333;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading,
+        .error {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 1.5rem;
+            color: #b0b0b0;
+        }
+
+        .error h2 {
+            color: #f7474d;
+            margin-bottom: 15px;
+        }
+
+        .error a {
+            color: #f7474d;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #f7474d;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .error a:hover {
+            background: #f7474d;
+            color: white;
+        }
+
+        /* ----- ستايل قسم التنبيه (الملاحظة) ----- */
+        .install-note {
+            background: #403b3b;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 0px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-right: 4px solid #f7474d;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .install-note:hover {
+            transform: translateY(-5px);
+        }
+
+        .install-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            object-fit: cover;
+            /* جعل الصورة أبيض وأسود */
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+            border: 1px solid #555;
+        }
+
+
+        .install-content h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .install-content p {
+            color: #bbb;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .install-link {
+            display: inline-block;
+            color: #f7474d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid #f7474d;
+            padding: 6px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .install-link:hover {
+            background: #f7474d;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #262222;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+            margin-top: auto;
+            border-top: 1px solid #444;
+        }
+
+        footer a {
+            color: #f7474d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #f7474d;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            height: 10px;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #252526;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f7474d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .flag-title {
+                font-size: 2rem;
+            }
+
+            .code-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .copy-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            pre,
+            .line-numbers {
+                font-size: 12px;
+            }
+
+            .install-note {
+                flex-direction: column;
+                text-align: center;
+                border-right: none;
+                border-top: 4px solid #f7474d;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+        <div class="container header-content">
+            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg" alt="CodeLab Logo" class="header-logo">
+            
+            <div class="header-text">
+                <h1> مكتبة أعلام الدول - <a href="https://t.me/CodeLabIQ" style="color: #dc3545 !important; text-decoration: none;">CodeLab</a> </h1>
+                <p>مجموعة كاملة من أكواد رسم الأعلام باستخدام C++ Graphics</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div style="padding: 10%;" id="content" class="loading">جاري التحميل...</div>
+
+        <div class="container">
+            <div class="install-note">
+                <img src="https://store-images.s-microsoft.com/image/apps.8200.14525614036320964.388ccdd1-65a9-4bfc-81ce-c614493bcc79.5dfc4719-b603-45a1-a73e-bf55d9d25077?q=90&w=256&h=256&mode=crop&format=jpg&background=%230078D7"
+                    alt="Dev C++" class="install-img">
+                <div class="install-content">
+                    <h3>⚙️ متطلبات التشغيل</h3>
+                    <p>لتشغيل هذا الكود، تحتاج إلى برنامج Dev C++ مع مكتبة Graphics.
+                        <br> يمكنك تحميله ومشاهدة طريقة التنصيب من خلال الرابط
+                    </p>
+                    <a href="https://t.me/cs_apps/18" target="_blank" class="install-link">
+                        الانتقال إلى شرح التنصيب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <img src="https://i.ibb.co/xSBbWHV1/W0nkcf0f-Wj8-JCNTk-Ki-Rv-UEq5-QPLF6bjr-WC-85n-V7-Pz-Rc-Rc-Fk-L2-Ih8tp-ZO3nuyewo7w-E5whx-EHa-Bb-Xdh-A.jpg"
+                alt="CodeLab Logo" class="footer-logo">
+            <p>للمزيد من المشاريع البرمجية <a href="https://t.me/CodeLabIQ" target="_blank">CodeLab</a></p>
+        </div>
+    </footer>
+
+    <script src="flag-details.js"></script>
+</body>
+
+</html>
